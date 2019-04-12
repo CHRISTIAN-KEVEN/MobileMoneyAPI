@@ -1,0 +1,2 @@
+  chemin  fichier de services0 C:\Users\Christian\Documents\NetBeansProjects\RequestController\mdalproperties.properties
+non trouve dans les jars mdalproperties.properties

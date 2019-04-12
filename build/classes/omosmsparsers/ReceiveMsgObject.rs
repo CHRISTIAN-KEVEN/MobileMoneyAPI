@@ -1,0 +1,2 @@
+omosmsparsers.ReceiveMsgObject
+paypalPackage.ReceiveMsgObject

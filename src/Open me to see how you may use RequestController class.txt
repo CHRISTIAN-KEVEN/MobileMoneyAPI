@@ -1,0 +1,22 @@
+ @RequestMapping(value = "/bus/{id}/update/available", method=RequestMethod.POST)
+    public String updateAvailable(@PathVariable("id") int id, @RequestParam("customerNumber") String customerNumber) throws Exception{
+        
+        RequestController rc = new RequestController();
+        MoMoDisplay mDisplay = rc.processMobilePayment("1",customerNumber);
+        
+       if(mDisplay != null){
+           
+         Bus bus = busDao.getById(id);
+        int n = bus.getStillAvailable();
+        bus.setStillAvailable(--n);
+        busDao.update(bus);
+        
+        System.out.println(mDisplay.toString());
+        // List of categories to populate the sidebar
+        
+        return "redirect:/all/buses?operation=Ticket successfully booked !";
+        
+        }
+        
+        return "redirect:/all/buses?operation=failed";
+    }
